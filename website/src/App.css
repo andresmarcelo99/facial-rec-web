@@ -221,9 +221,10 @@
 
   .demo-text {
     font-size: 4vw;
+    font-weight: 200;
     padding-right: 0.5em;
     padding-left: 0.5em;
-    color: rgb(139, 139, 139);
+    color: rgb(102, 101, 101);
   }
 
   .prod-demo-img {
