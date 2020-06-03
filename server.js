@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+const path = require("path");
 
 const register = require("./routes/api/register");
 
@@ -24,6 +25,14 @@ app.use(passport.initialize());
 
 //use routes
 app.use("/api/register", register);
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("./website/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "website", "build", "index.html")); //relative file
+  });
+}
 
 const port = process.env.PORT || 5000;
 

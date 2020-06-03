@@ -1,38 +1,169 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.leftside,
+.rightside {
+  height: 100vh;
+  width: 100vw;
+}
+
+.register-page {
+  height: 100vh;
+  width: 100%;
+  background: #2d3032;
+}
+
+.register-div-form {
+  display: block;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home-btn {
+  margin: 2vw;
+  max-width: 10vw;
+  max-height: 6vh;
+  border-radius: 10px;
+  flex: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.register-form {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  color: white;
+  padding: 4vh 6vw;
+  border: solid 2px #9615db;
+  border-radius: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.leftside {
+  background: #2d3032;
+}
+
+.rightside {
+  background: white;
+  background-image: url("./components/landingPage.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.navbar-brand {
+  font-size: 6vh;
+  padding: 0.5em;
+  padding-left: 0.1em;
+}
+
+.nav-links {
+  font-size: 2.5vh;
+  font-weight: 300;
+  padding-left: 5em;
+}
+
+.nav-logo {
+  height: 7vh;
+  width: 6vw;
+  padding-bottom: 0.2em;
+}
+
+.landing-text {
+  padding: 3em;
+  padding-left: 5em;
+}
+
+.landing-text label {
+  color: white;
+  font-size: 4vw;
+}
+
+.landing-text p {
+  color: rgba(255, 255, 255, 0.534);
+  font-weight: 200;
+  font-size: 1.2vw;
+}
+
+.login-btn {
+  background-color: transparent;
+  border-color: #9615db;
+  margin-top: 3vh;
+  padding: 1vh 1.5vw;
+}
+.login-btn:hover {
+  background-color: #9615db;
+}
+.form-modal {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+  max-width: 50%;
+  padding-left: 3em;
+}
+
+.registerLink {
+  font-size: 1vw;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 768px) {
+  .navbar-brand {
+    font-size: 5vh;
+    padding-top: 0.5em;
+    padding-left: 0.1em;
   }
-  to {
-    transform: rotate(360deg);
+  .nav-logo {
+    height: 17vh;
+    width: 14vw;
+  }
+  .mr-auto {
+    margin-top: -30px;
+    text-align: center;
+  }
+  .landing-text {
+    padding: 7vw;
+    padding-top: 0;
+  }
+
+  .landing-text label {
+    color: white;
+    font-size: 8vw;
+  }
+
+  .landing-text p {
+    color: rgba(255, 255, 255, 0.534);
+    font-weight: 200;
+    font-size: 4vw;
+  }
+
+  .form-modal {
+    height: 100vh;
+    max-width: 100%;
+    padding: 3vw;
+  }
+
+  .login-form {
+    max-width: 100%;
+    padding: 1vw;
+  }
+
+  .home-btn {
+    margin: 2vw;
+    max-width: 20vw;
+    max-height: 7vh;
+    border-radius: 10px;
+    flex: 1;
+  }
+  .register-form {
+    margin-top: 4vh;
+  }
+  .register-labels {
+    font-size: 2vh;
+  }
+
+  .registerLink {
+    font-size: 1.7vh;
+    font-weight: 300;
+    text-decoration: underline;
   }
 }
