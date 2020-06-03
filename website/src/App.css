@@ -214,12 +214,15 @@
   }
 
   .demo-label-title {
+    text-align: center;
     font-size: 8vw;
     font-weight: 500;
   }
 
   .demo-text {
     font-size: 4vw;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
     color: rgb(139, 139, 139);
   }
 
