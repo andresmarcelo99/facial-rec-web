@@ -6,6 +6,8 @@ const passport = require("passport");
 const path = require("path");
 
 const register = require("./routes/api/register");
+const login = require("./routes/api/login");
+const profile = require("./routes/api/profile");
 
 dotenv.config();
 const app = express();
@@ -23,8 +25,13 @@ mongoose
 //passport middleware
 app.use(passport.initialize());
 
+//passport config
+require("./passport.js")(passport);
+
 //use routes
 app.use("/api/register", register);
+app.use("/api/login", login);
+app.use("/api/profile", profile);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("./website/build"));

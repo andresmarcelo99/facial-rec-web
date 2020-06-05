@@ -4,10 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "client-install": "npm install --prefix client",
     "start": "node server.js",
     "server": "nodemon server.js",
-    "client": "npm start --prefix website",
+    "website": "npm start --prefix website",
     "dev": "concurrently \"npm run server\" \"npm run website\"",
     "heroku-postbuild": "cd website &&  npm install && npm run build"
   },
@@ -22,6 +21,7 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.16",
+    "nodemailer": "^6.4.8",
     "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",

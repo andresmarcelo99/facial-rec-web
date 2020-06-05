@@ -55,6 +55,11 @@
   background: #2d3032;
 }
 
+.errors-register li {
+  padding: 0.5em;
+  /* border-color: rgba(255, 0, 0, 0.705); */
+}
+
 .register-div-form {
   display: block;
   text-align: center;
@@ -66,6 +71,12 @@
   max-height: 6vh;
   border-radius: 10px;
   flex: 1;
+}
+
+.error-reg-btn {
+  margin: 2vw;
+  max-width: 15vw;
+  max-height: 6vh;
 }
 
 .register-form {
@@ -197,6 +208,19 @@
     border-radius: 10px;
     flex: 1;
   }
+
+  .error-reg-btn {
+    margin: 2vw;
+    max-width: 45vw;
+    max-height: 7vh;
+    float: right;
+  }
+
+  .login_alert {
+    color: red !important;
+    font-size: 4vw;
+  }
+
   .register-form {
     margin-top: 4vh;
   }

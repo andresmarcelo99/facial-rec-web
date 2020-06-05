@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const passport = require("passport");
+const nodemailer = require("nodemailer");
 
 //load validation
 const validateRegisterInput = require("../../validation/register");
@@ -13,7 +12,9 @@ const ClientModel = require("../../models/clientModel");
 // @route GET api/register/test
 // @desc Test post route
 // @access public route
-router.get("/test", (req, res) => res.json({ msg: "Register works" }));
+router.get("/test", (req, res) => {
+  res.json({ msg: "Register works" });
+});
 
 // @route GET api/register/test
 // @desc Test post route
@@ -33,6 +34,7 @@ router.post("/", (req, res) => {
     } else {
       const newClient = new ClientModel({
         name: req.body.name,
+        company: req.body.company,
         email: req.body.email,
         password: req.body.password,
       });
@@ -50,6 +52,29 @@ router.post("/", (req, res) => {
           }
         });
       });
+
+      // create reusable transporter object using the default SMTP transport
+      let transporter = nodemailer.createTransport({
+        host: "secure233.servconfig.com",
+        port: 465,
+        secure: true, // true for 465, false for other ports
+        auth: {
+          user: "info@sidhn.com", // generated ethereal user
+          pass: "HLqiV7F(lglu", // generated ethereal password
+        },
+      });
+
+      // send mail with defined transport object
+      let info = transporter.sendMail({
+        from: '"SID" <info@sidhn.com>', // sender address
+        to: `${newClient.email}`, // list of receivers
+        subject: "Registration Confirmation", // Subject line
+        text: `Hello, ${newClient.name} thank you for joining!`, // plain text body
+        html: `<b>Hello, ${newClient.name} from ${newClient.company} thank you for joining!</b>`, // html body
+      });
+
+      console.log("Message sent: %s", info.messageId);
+      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
     }
   });
 });

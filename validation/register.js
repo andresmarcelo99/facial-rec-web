@@ -6,6 +6,7 @@ module.exports = function validateRegisterInput(data) {
 
   data.name = !isEmpty(data.name) ? data.name : "";
   data.email = !isEmpty(data.email) ? data.email : "";
+  data.company = !isEmpty(data.company) ? data.company : "";
   data.password = !isEmpty(data.password) ? data.password : "";
   data.password2 = !isEmpty(data.password2) ? data.password2 : "";
 
@@ -15,6 +16,10 @@ module.exports = function validateRegisterInput(data) {
 
   if (Validator.isEmpty(data.name)) {
     errors.name = "Name field is required";
+  }
+
+  if (Validator.isEmpty(data.company)) {
+    errors.company = "Company field is required";
   }
 
   if (Validator.isEmpty(data.email)) {

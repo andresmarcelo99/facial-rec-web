@@ -28,16 +28,16 @@ export class NavBar extends Component {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link className="nav-links" as={Link} to="/">
-              Home
-            </Nav.Link>
-            <Nav.Link className="nav-links" as={Link} to="register">
               Features
             </Nav.Link>
-            <Nav.Link className="nav-links" as={Link} to="register">
+            <Nav.Link className="nav-links" as={Link}>
               Pricing
             </Nav.Link>
-            <Nav.Link className="nav-links" as={Link} to="register">
+            <Nav.Link className="nav-links" as={Link}>
               Demo
+            </Nav.Link>
+            <Nav.Link className="nav-links" as={Link}>
+              Contact us
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

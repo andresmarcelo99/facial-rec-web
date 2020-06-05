@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 import NavBar from "../NavBar";
 import LoginModal from "../LoginModal";
@@ -26,10 +27,15 @@ export class LandingPage extends Component {
                 exercitation ullamco laboris nisi ut aliquip ex ea commodo
                 consequat.
               </p>
-              <LoginModal />
-              <Link className="registerLink" to="register">
-                Not a user? Register here!
-              </Link>
+
+              {!this.props.client.logged && (
+                <span>
+                  <LoginModal />
+                  <Link className="registerLink" to="register">
+                    Not a user? Register here!
+                  </Link>
+                </span>
+              )}
             </div>
           </Col>
           <Col md="5" className="rightside"></Col>
@@ -66,4 +72,8 @@ export class LandingPage extends Component {
   }
 }
 
-export default LandingPage;
+const mapStateToProps = (state) => ({
+  client: state.client,
+});
+
+export default connect(mapStateToProps)(LandingPage);
