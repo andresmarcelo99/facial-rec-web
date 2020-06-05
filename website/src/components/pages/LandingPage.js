@@ -14,6 +14,13 @@ export class LandingPage extends Component {
         <Row noGutters={true}>
           <Col md="7" className="leftside">
             <NavBar />
+            {this.props.client.logged && (
+              <div
+                style={{ padding: "1em", color: "rgba(255, 255, 255, 0.534" }}
+              >
+                Welcome, {this.props.client.logged_client.currentClient.name}
+              </div>
+            )}
             <div id="pushContent"></div>
             <div className="landing-text">
               <label>

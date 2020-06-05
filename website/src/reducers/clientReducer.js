@@ -11,6 +11,7 @@ import {
 
 const initialState = {
   clients: [],
+  logged_client: {},
   alert: false,
   errorType: "",
   curr: "",
@@ -44,6 +45,7 @@ export default function (state = initialState, action) {
         ...state,
         logged: true,
         token: action.payload,
+        logged_client: action.payload,
       };
 
     case EDIT_CLIENT:

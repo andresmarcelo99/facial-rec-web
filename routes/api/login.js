@@ -42,12 +42,17 @@ router.post("/", (req, res) => {
         //sign the token
         jwt.sign(
           payload,
-          process.env.SECRETKEY,
+          process.env.SECRET,
           { expiresIn: 86400 },
           (err, token) => {
             res.json({
               success: true,
               token: "Bearer " + token,
+              currentClient: {
+                name: client.name,
+                email: client.email,
+                company: client.company,
+              },
             });
           }
         );
