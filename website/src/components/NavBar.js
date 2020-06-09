@@ -27,17 +27,17 @@ export class NavBar extends Component {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link className="nav-links" as={Link} to="/">
+            {/* <Nav.Link className="nav-links" as={Link} to="/">
               Features
-            </Nav.Link>
+            </Nav.Link> */}
             <Nav.Link className="nav-links" as={Link}>
-              Pricing
+              Precios
             </Nav.Link>
             <Nav.Link className="nav-links" as={Link}>
               Demo
             </Nav.Link>
             <Nav.Link className="nav-links" as={Link}>
-              Contact us
+              Contacto
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

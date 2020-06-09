@@ -32,6 +32,9 @@ body {
   height: 100vh;
   width: 100vw;
 }
+.slogan-p {
+  text-align: justify;
+}
 
 .demo-info {
   padding: 2em;

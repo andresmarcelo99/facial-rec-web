@@ -29,22 +29,21 @@ export class LandingPage extends Component {
                 </div>
               )}
               <label>
-                We build & <br /> design <br /> web applications.
+                Identificando <br /> tu personal.
               </label>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                <br /> sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. <br />
-                Ut enim ad minim veniam, quis nostrud <br />
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.
+              <p className="slogan-p">
+                Somos una empresa que surge con la necesidad de reinventar un
+                software eficiente para el reconocimiento facial, reduciendo
+                costos, evitando demoras en el ingreso del personal a las
+                empresas y haciendo el proceso mas efectivo y mucho más
+                personal.
               </p>
 
               {!this.props.client.logged && (
                 <span>
                   <LoginModal />
                   <Link className="registerLink" to="register">
-                    Not a user? Register here!
+                    ¿No eres usuario? ¡Registrate aqui!
                   </Link>
                 </span>
               )}
@@ -57,7 +56,7 @@ export class LandingPage extends Component {
           <Col className="product-demo">
             <div className="demo-info">
               <label className="demo-label-title">
-                Facial Recognition Software
+                Software de Reconocimiento Facial
               </label>
               <p className="demo-text">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem

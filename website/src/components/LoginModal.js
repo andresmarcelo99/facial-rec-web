@@ -97,7 +97,7 @@ function LoginModal() {
         className="login-btn"
         onClick={() => setModalShow(true)}
       >
-        Login here!
+        Iniciar Sesion
       </Button>
 
       <MyVerticallyCenteredModal
