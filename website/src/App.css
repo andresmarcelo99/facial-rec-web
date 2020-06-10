@@ -59,6 +59,69 @@ body {
   color: rgb(82, 82, 82);
 }
 
+.contact-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #2d3032;
+}
+.contact-page-container {
+  min-height: 100vh;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1em !important;
+  background: white;
+}
+.form-group-contact {
+  padding: 1vh;
+}
+.contact-form {
+  margin-right: 3vw;
+  margin-left: 3vw;
+}
+.header-label-contact {
+  font-size: 6vh;
+  font-weight: 500;
+  text-align: center;
+  padding-bottom: 0;
+}
+.contact-go-home-link {
+  padding: 2vh;
+  font-weight: 500;
+  color: #9615db;
+}
+.contact-go-home-link:hover {
+  padding: 2vh;
+  color: #d6b1eb;
+}
+
+.thanks-page {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(90deg, #2d3032 0%, #9615db 100%);
+}
+.thanks-go-home-link {
+  color: white;
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
+  padding: 1.5vh;
+}
+
+.thanks-logo img {
+  overflow: auto;
+  display: block;
+  margin-top: 8vh;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50vh;
+}
+.thanks-go-home-link:hover {
+  padding: 2vh;
+  color: #d6b1eb;
+}
+
 .register-page {
   min-height: 100vh;
   width: 100%;
@@ -268,5 +331,39 @@ body {
     min-height: 100vh;
     width: 100%;
     background: #2d3032;
+  }
+  .contact-page-container {
+    min-height: 100vh;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .header-label-contact {
+    font-size: 6vh;
+    font-weight: 500;
+    text-align: center;
+    padding: 0;
+  }
+  .form-group-contact {
+    padding: 0.5vh;
+  }
+
+  .contact-go-home-link {
+    padding: 2vh;
+    color: #9615db;
+  }
+
+  .thanks-go-home-link {
+    color: white;
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px;
+    padding: 2vh;
+    font-size: 2vh;
+  }
+  .thanks-logo img {
+    margin-top: 4em;
+    width: 100%;
+    height: 35vh;
   }
 }

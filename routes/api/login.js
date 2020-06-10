@@ -49,6 +49,7 @@ router.post("/", (req, res) => {
               success: true,
               token: "Bearer " + token,
               currentClient: {
+                _id: client._id,
                 name: client.name,
                 email: client.email,
                 company: client.company,

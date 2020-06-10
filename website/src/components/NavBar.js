@@ -36,7 +36,7 @@ export class NavBar extends Component {
             <Nav.Link className="nav-links" as={Link}>
               Demo
             </Nav.Link>
-            <Nav.Link className="nav-links" as={Link}>
+            <Nav.Link className="nav-links" as={Link} to="contact">
               Contacto
             </Nav.Link>
           </Nav>

@@ -8,16 +8,6 @@ export default function ErrorAlert(props) {
 
   if (show) {
     return (
-      //   <Alert
-      //     className="alert-pop"
-      //     variant="danger"
-      //     onClose={() => setShow(false)}
-      //     dismissible
-      //   >
-      //     <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-      //
-      //   </Alert>
-
       <Modal className="alert-pop" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Oops there's an error</Modal.Title>

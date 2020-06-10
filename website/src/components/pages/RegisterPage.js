@@ -14,7 +14,7 @@ export class RegisterPage extends Component {
     company: "",
     password: "",
     password2: "",
-    logged: false,
+    registered: false,
     alert: false,
   };
 
@@ -36,10 +36,7 @@ export class RegisterPage extends Component {
   };
 
   render() {
-    if (
-      (this.state.logged || this.props.client.logged) &&
-      !this.props.client.alert
-    ) {
+    if (this.state.registered && !this.props.client.alert) {
       console.log("logged");
       return <Redirect to="/" />;
     } else {
@@ -164,8 +161,8 @@ export class RegisterPage extends Component {
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (prevProps.client !== this.props.client) {
-      if (this.props.client.logged) {
-        this.setState({ logged: true });
+      if (this.props.client.curr === "registered") {
+        this.setState({ registered: true });
       }
       if (this.props.client.alert) {
         this.setState({ alert: true });

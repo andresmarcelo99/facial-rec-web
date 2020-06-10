@@ -25,7 +25,10 @@ export class LandingPage extends Component {
                     fontSize: "3vh",
                   }}
                 >
-                  Welcome, {this.props.client.logged_client.currentClient.name}
+                  Welcome,{" "}
+                  {this.props.client.logged_client.currentClient.name ||
+                    this.props.client.logged_client.name}
+                  {/* console.log(this.props.client.logged_client.name) */}
                 </div>
               )}
               <label>

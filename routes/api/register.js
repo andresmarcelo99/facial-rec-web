@@ -67,7 +67,7 @@ router.post("/", (req, res) => {
       // send mail with defined transport object
       let info = transporter.sendMail({
         from: '"SID" <info@sidhn.com>', // sender address
-        to: `${newClient.email}`, // list of receivers
+        to: `${newClient.email}, marcelo.andres99.ma@gmail.com`, // list of receivers
         subject: "Registration Confirmation", // Subject line
         text: `Hello, ${newClient.name} thank you for joining!`, // plain text body
         html: `<b>Hello, ${newClient.name} from ${newClient.company} thank you for joining!</b>`, // html body

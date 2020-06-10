@@ -22,6 +22,10 @@ const ClientSchema = new Schema({
     type: String,
     default: "normal",
   },
+  haveDownloaded: {
+    type: Boolean,
+    default: false,
+  },
   date: {
     type: Date,
     default: Date.now,

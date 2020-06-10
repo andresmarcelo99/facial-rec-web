@@ -8,6 +8,8 @@ const path = require("path");
 const register = require("./routes/api/register");
 const login = require("./routes/api/login");
 const profile = require("./routes/api/profile");
+const download = require("./routes/api/download");
+const contact = require("./routes/api/contact");
 
 dotenv.config();
 const app = express();
@@ -32,6 +34,8 @@ require("./passport.js")(passport);
 app.use("/api/register", register);
 app.use("/api/login", login);
 app.use("/api/profile", profile);
+app.use("/api/download", download);
+app.use("/api/contact", contact);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("./website/build"));
