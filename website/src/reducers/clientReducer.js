@@ -37,7 +37,7 @@ export default function (state = initialState, action) {
         ...state,
         clients: [...state.clients, action.payload],
         alert: false,
-        cur: "regisered",
+        cur: "registered",
       };
 
     case LOGGIN:

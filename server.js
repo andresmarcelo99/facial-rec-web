@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const path = require("path");
+const cors = require("cors");
 
 const register = require("./routes/api/register");
 const login = require("./routes/api/login");
@@ -17,6 +18,9 @@ const app = express();
 //body-parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+// enable all CORS requests
+app.use(cors());
 
 //db config
 mongoose

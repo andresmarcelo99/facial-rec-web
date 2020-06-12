@@ -7,10 +7,18 @@ import LandingPage from "./components/pages/LandingPage";
 import RegisterPage from "./components/pages/RegisterPage";
 import ContactPage from "./components/pages/Contact";
 import ThanksPage from "./components/pages/ThanksPage";
+
 import Home from "./components/pages/Home";
 import store from "./store";
+import { useAuth0 } from "./react-auth0-spa";
 
 function App() {
+  const { loading } = useAuth0();
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <Provider store={store}>
       <div className="App">
@@ -24,7 +32,7 @@ function App() {
             <Route path="/" render={() => <div>404</div>} />
           </Switch>
         </BrowserRouter>
-      </div>
+      </div>{" "}
     </Provider>
   );
 }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
 import { Link, Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 import ErrorAlert from "../Alerts";
 
@@ -34,6 +35,18 @@ export class RegisterPage extends Component {
   change = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (prevProps.client !== this.props.client) {
+      if (this.props.client.curr === "registered") {
+        this.setState({ registered: true });
+        console.log("changed");
+      }
+      if (this.props.client.alert) {
+        this.setState({ alert: true });
+      }
+    }
+  }
 
   render() {
     if (this.state.registered && !this.props.client.alert) {
@@ -158,21 +171,12 @@ export class RegisterPage extends Component {
       );
     }
   }
-
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    if (prevProps.client !== this.props.client) {
-      if (this.props.client.curr === "registered") {
-        this.setState({ registered: true });
-      }
-      if (this.props.client.alert) {
-        this.setState({ alert: true });
-      }
-    }
-  }
 }
 
 const mapStateToProps = (state) => ({
   client: state.client,
 });
 
-export default connect(mapStateToProps, { addClient })(RegisterPage);
+export default connect(mapStateToProps, { addClient })(
+  withRouter(RegisterPage)
+);
