@@ -93,8 +93,8 @@ function LoginModal() {
     <div>
       <Button
         variant="dark"
-        style={{ marginBottom: "0.5em" }}
-        className="login-btn"
+        style={{ marginBottom: "0.5em", padding: "0.2em" }}
+        className="auth-btn"
         onClick={() => setModalShow(true)}
       >
         Iniciar Sesion

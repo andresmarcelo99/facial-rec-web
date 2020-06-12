@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import { useAuth0 } from "../../react-auth0-spa";
 
 import NavBar from "../NavBar";
@@ -9,8 +9,8 @@ import LoginModal from "../LoginModal";
 import prodDemo from "../prod-demo-temp.svg";
 
 function LandingPage() {
-  const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
-
+  // const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
+  const client = useSelector((state) => state.client);
   return (
     <div>
       <Row noGutters={true}>
@@ -19,21 +19,19 @@ function LandingPage() {
 
           <div id="pushContent"></div>
           <div className="landing-text">
-            {/* {this.props.client.logged && (
-                <div
-                  style={{
-                    color: "#b864e6",
-                    fontWeight: "300",
-                    fontSize: "3vh",
-                  }}
-                >
-                  Welcome,{" "}
-                  { {this.props.client.logged_client.currentClient.name ||
-                    this.props.client.logged_client.name}
-                  console.log(this.props.client.logged_client.name) }
-                </div>
-              )} */}
-            {isAuthenticated && (
+            {client.logged && (
+              <div
+                style={{
+                  color: "#b864e6",
+                  fontWeight: "300",
+                  fontSize: "3vh",
+                }}
+              >
+                Welcome, {client.logged_client.currentClient.name}
+                {/* console.log(this.props.client.logged_client.name) */}
+              </div>
+            )}
+            {/* {isAuthenticated && (
               <div
                 style={{
                   color: "#b864e6",
@@ -43,7 +41,7 @@ function LandingPage() {
               >
                 Welcome, {user.nickname}
               </div>
-            )}
+            )} */}
 
             <label>
               Identificando <br /> tu personal.
@@ -55,38 +53,39 @@ function LandingPage() {
               y haciendo el proceso mas efectivo y mucho más personal.
             </p>
 
-            {/* {!this.props.client.logged && (
-              
-              <span>
-                { <LoginModal /> }
-                <Link className="registerLink" to="register">
-                  ¿No eres usuario? ¡Registrate aqui!
-                </Link>
-              </span>
-            )*/}
+            {
+              !client.logged && (
+                <span>
+                  {<LoginModal />}
+                  <Link className="registerLink" to="register">
+                    ¿No eres usuario? ¡Registrate aqui!
+                  </Link>
+                </span>
+              )
 
-            {!isAuthenticated && (
-              <button
-                className="auth-btn"
-                onClick={() => loginWithRedirect({})}
-              >
-                Log in
-              </button>
-            )}
-            {isAuthenticated && (
-              <button className="auth-btn" onClick={() => logout()}>
-                Log out
-              </button>
-            )}
+              // {!isAuthenticated && (
+              //   <button
+              //     className="auth-btn"
+              //     onClick={() => loginWithRedirect({})}
+              //   >
+              //     Log in
+              //   </button>
+              // )}
+              // {isAuthenticated && (
+              //   <button className="auth-btn" onClick={() => logout()}>
+              //     Log out
+              //   </button>
+              // )}
 
-            {!isAuthenticated && (
-              <div>
-                {/* <LoginModal /> */}
-                <Link className="registerLink" to="register">
-                  ¿No eres usuario? ¡Registrate aqui!
-                </Link>
-              </div>
-            )}
+              // {!isAuthenticated && (
+              //   <div>
+              //     {/* <LoginModal /> */}
+              //     <Link className="registerLink" to="register">
+              //       ¿No eres usuario? ¡Registrate aqui!
+              //     </Link>
+              //   </div>
+              //)
+            }
           </div>
         </Col>
         <Col md="5" className="rightside"></Col>
