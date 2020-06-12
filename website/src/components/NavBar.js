@@ -41,7 +41,7 @@ function NavBar() {
           <Nav.Link className="nav-links" as={Link} to="contact">
             Contacto
           </Nav.Link>
-          <Nav.Link className="nav-links-auth" as={Link} to="">
+          {/* <Nav.Link className="nav-links-auth" as={Link} to="">
             <div>
               {!isAuthenticated && (
                 <button
@@ -57,7 +57,7 @@ function NavBar() {
                 </button>
               )}
             </div>
-          </Nav.Link>
+          </Nav.Link> */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

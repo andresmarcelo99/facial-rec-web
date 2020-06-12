@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { useAuth0 } from "../../react-auth0-spa";
@@ -9,7 +9,7 @@ import LoginModal from "../LoginModal";
 import prodDemo from "../prod-demo-temp.svg";
 
 function LandingPage() {
-  const { isAuthenticated, user } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
 
   return (
     <div>
@@ -56,6 +56,7 @@ function LandingPage() {
             </p>
 
             {/* {!this.props.client.logged && (
+              
               <span>
                 { <LoginModal /> }
                 <Link className="registerLink" to="register">
@@ -65,12 +66,26 @@ function LandingPage() {
             )*/}
 
             {!isAuthenticated && (
-              <span>
+              <button
+                className="auth-btn"
+                onClick={() => loginWithRedirect({})}
+              >
+                Log in
+              </button>
+            )}
+            {isAuthenticated && (
+              <button className="auth-btn" onClick={() => logout()}>
+                Log out
+              </button>
+            )}
+
+            {!isAuthenticated && (
+              <div>
                 {/* <LoginModal /> */}
                 <Link className="registerLink" to="register">
                   ¿No eres usuario? ¡Registrate aqui!
                 </Link>
-              </span>
+              </div>
             )}
           </div>
         </Col>
