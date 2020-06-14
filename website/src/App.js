@@ -10,15 +10,8 @@ import ThanksPage from "./components/pages/ThanksPage";
 
 import Home from "./components/pages/Home";
 import store from "./store";
-import { useAuth0 } from "./react-auth0-spa";
 
 function App() {
-  const { loading } = useAuth0();
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <Provider store={store}>
       <div className="App">
