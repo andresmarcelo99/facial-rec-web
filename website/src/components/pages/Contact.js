@@ -44,21 +44,25 @@ function Contact() {
           <span>{submited && <InfoModal show={submited} />}</span>
           <div className="header-label-contact">Contactanos!</div>
           {alert && (
-            <div style={{ color: "red", fontSize: "2vh" }}>
+            <div style={{ color: "red", fontSize: "2vh", textAlign: "center" }}>
               {" Porfavor llenar todos los campos e ingresar correo valido"}
             </div>
           )}
-          <hr />
           <Form className="contact-form">
             <Form.Group
               className="form-group-contact"
               controlId="formBasicName"
             >
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Nombre</Form.Label>
               <Form.Control
+                style={{
+                  background: "transparent",
+                  color: "white",
+                  borderColor: "rgba(255, 255, 255, 0.30)",
+                }}
                 onChange={(e) => setName(e.target.value)}
                 type="text"
-                placeholder="Enter your name"
+                placeholder="Ingrese su nombre"
               />
             </Form.Group>
             <Form.Group
@@ -67,34 +71,47 @@ function Contact() {
             >
               <Form.Label>Email address</Form.Label>
               <Form.Control
+                style={{
+                  background: "transparent",
+                  color: "white",
+                  borderColor: "rgba(255, 255, 255, 0.30)",
+                }}
                 onChange={(e) => setEmail(e.target.value)}
                 type="email"
-                placeholder="Enter email"
-              />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
-            </Form.Group>
-            <Form.Group
-              className="form-group-contact"
-              controlId="formBasicCompany"
-            >
-              <Form.Label>Company</Form.Label>
-              <Form.Control
-                onChange={(e) => setCompany(e.target.value)}
-                type="text"
-                placeholder="Enter your company"
+                placeholder="Ingrese email"
               />
             </Form.Group>
+
             <Form.Group
               className="form-group-contact"
               controlId="formBasicPhoneNumber"
             >
               <Form.Label>Phone Number</Form.Label>
               <Form.Control
+                style={{
+                  background: "transparent",
+                  color: "white",
+                  borderColor: "rgba(255, 255, 255, 0.30)",
+                }}
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 type="text"
-                placeholder="Enter your phone number"
+                placeholder="Ingrese su numero de telefono"
+              />
+            </Form.Group>
+
+            <Form.Group controlId="exampleForm.ControlTextarea1">
+              <Form.Label>Mensaje</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows="3"
+                style={{
+                  background: "transparent",
+                  color: "white",
+                  borderColor: "rgba(255, 255, 255, 0.30)",
+                }}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                type="text"
+                placeholder="Mensaje"
               />
             </Form.Group>
 

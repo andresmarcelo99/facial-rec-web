@@ -5,7 +5,7 @@ import { connect, useSelector } from "react-redux";
 
 import NavBar from "../NavBar";
 import LoginModal from "../LoginModal";
-import prodDemo from "../prod-demo-temp.svg";
+import prodDemo from "../prod-demo-temp.jpg";
 
 function LandingPage() {
   // const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
@@ -56,9 +56,16 @@ function LandingPage() {
               !client.logged && (
                 <span>
                   {<LoginModal />}
-                  <Link className="registerLink" to="register">
-                    ¿No eres usuario? ¡Registrate aqui!
-                  </Link>
+                  {client.curr !== "registered" && (
+                    <Link className="registerLink" to="register">
+                      ¿No eres usuario? ¡Registrate aqui!
+                    </Link>
+                  )}
+                  {client.curr === "registered" && (
+                    <div className="register-success">
+                      ¡Fuiste registrado exitosamente!
+                    </div>
+                  )}
                 </span>
               )
 

@@ -10,7 +10,7 @@ export default function ErrorAlert(props) {
     return (
       <Modal className="alert-pop" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Oops there's an error</Modal.Title>
+          <Modal.Title>Oops hubo un error</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <ul className="errors-register" style={{ listStyle: "none" }}>
@@ -21,7 +21,7 @@ export default function ErrorAlert(props) {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Close
+            Cerrar
           </Button>
         </Modal.Footer>
       </Modal>
@@ -39,7 +39,7 @@ export default function ErrorAlert(props) {
       }}
       onClick={handleShow}
     >
-      Show error(s)
+      Mostrar
     </Button>
   );
 }

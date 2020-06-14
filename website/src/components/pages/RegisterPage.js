@@ -15,7 +15,6 @@ export class RegisterPage extends Component {
     company: "",
     password: "",
     password2: "",
-    registered: false,
     alert: false,
   };
 
@@ -28,7 +27,6 @@ export class RegisterPage extends Component {
       password2: this.state.password2,
     };
     console.log(newClient);
-    console.log(this.state.logged);
     this.props.addClient(newClient);
   };
 
@@ -38,10 +36,6 @@ export class RegisterPage extends Component {
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (prevProps.client !== this.props.client) {
-      if (this.props.client.curr === "registered") {
-        this.setState({ registered: true });
-        console.log("changed");
-      }
       if (this.props.client.alert) {
         this.setState({ alert: true });
       }
@@ -49,8 +43,7 @@ export class RegisterPage extends Component {
   }
 
   render() {
-    if (this.state.registered && !this.props.client.alert) {
-      console.log("logged");
+    if (this.props.client.curr === "registered" && !this.props.client.alert) {
       return <Redirect to="/" />;
     } else {
       return (
@@ -65,7 +58,7 @@ export class RegisterPage extends Component {
               }}
               className="home-btn"
             >
-              Home
+              Inicio
             </Button>
           </Link>
           {/* this.props.client.alert */}
@@ -74,7 +67,7 @@ export class RegisterPage extends Component {
           <div className="register-div-form">
             <Form onSubmit={this.onSubmit} className="register-form">
               <Form.Group>
-                <Form.Label className="register-labels">Name</Form.Label>
+                <Form.Label className="register-labels">Nombre</Form.Label>
                 <Form.Control
                   name="name"
                   style={{
@@ -83,13 +76,13 @@ export class RegisterPage extends Component {
                     borderColor: "rgba(255, 255, 255, 0.30)",
                   }}
                   type="text"
-                  placeholder="Enter full name"
+                  placeholder="Ingrese nombre completo"
                   onChange={(e) => this.change(e)}
                 />
               </Form.Group>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label className="register-labels">
-                  Email address
+                  Correo Electronico
                 </Form.Label>
                 <Form.Control
                   name="email"
@@ -99,13 +92,13 @@ export class RegisterPage extends Component {
                     borderColor: "rgba(255, 255, 255, 0.30)",
                   }}
                   type="email"
-                  placeholder="Enter email"
+                  placeholder="Ingrese correo electronico"
                   onChange={(e) => this.change(e)}
                 />
               </Form.Group>
               <Form.Group>
                 <Form.Label className="register-labels">
-                  Enter the name of the company
+                  Ingrese el nombre de la empresa
                 </Form.Label>
                 <Form.Control
                   name="company"
@@ -115,12 +108,12 @@ export class RegisterPage extends Component {
                     borderColor: "rgba(255, 255, 255, 0.30)",
                   }}
                   type="text"
-                  placeholder="Company name"
+                  placeholder="Nombre de la empresa"
                   onChange={(e) => this.change(e)}
                 />
               </Form.Group>
               <Form.Group controlId="formBasicPassword">
-                <Form.Label className="register-labels">Password</Form.Label>
+                <Form.Label className="register-labels">Contraseña</Form.Label>
                 <Form.Control
                   name="password"
                   style={{
@@ -133,13 +126,13 @@ export class RegisterPage extends Component {
                   onChange={(e) => this.change(e)}
                 />
                 <Form.Text className="text-muted">
-                  Password must be between 6 and 30 characters
+                  La contraseña debe tener minimo 6 caracteres
                 </Form.Text>
               </Form.Group>
 
               <Form.Group controlId="formBasicPassword2">
                 <Form.Label className="register-labels">
-                  Confirm your password
+                  Confirme la contraseña
                 </Form.Label>
                 <Form.Control
                   name="password2"
@@ -163,7 +156,7 @@ export class RegisterPage extends Component {
                 }}
                 onClick={this.onSubmit}
               >
-                Register
+                Registrar
               </Button>
             </Form>
           </div>

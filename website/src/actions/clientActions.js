@@ -28,6 +28,11 @@ export const addClient = (client) => (dispatch) => {
     });
 };
 
+// export const addClient = (client) => ({
+//   type: ADD_CLIENT,
+//   payload: "registered",
+// });
+
 export const logClient = (client_log) => (dispatch) => {
   axios
     .post("/api/login", client_log)
