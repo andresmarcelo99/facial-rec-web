@@ -29,10 +29,10 @@ function NavBar() {
           {/* <Nav.Link className="nav-links" as={Link} to="/">
               Features
             </Nav.Link> */}
-          <Nav.Link className="nav-links" as={Link}>
+          <Nav.Link className="nav-links" as={Link} to="prices">
             Precios
           </Nav.Link>
-          <Nav.Link className="nav-links" as={Link}>
+          <Nav.Link className="nav-links" as={Link} to="/">
             Demo
           </Nav.Link>
           <Nav.Link className="nav-links" as={Link} to="contact">

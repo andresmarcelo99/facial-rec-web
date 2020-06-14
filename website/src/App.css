@@ -73,7 +73,44 @@ body {
   font-size: 2.5vh;
   color: rgb(82, 82, 82);
 }
+.pricesPage {
+  background-color: white;
+  min-height: 100vh;
+  color: #2d3032;
+}
+.prices-row {
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+.price-tag {
+  color: red;
+  text-align: center;
+  font-size: 3.5vh;
+  font-weight: 500;
+}
+.prices-col {
+  margin: 1em;
+  border: 3px solid #9615db;
+  border-radius: 5px;
+}
+.price-features-list li {
+  list-style: none;
+  margin: 1em;
+}
 
+.col-header {
+  font-weight: 500;
+  font-size: 5vh;
+}
+
+.buy-div-btn {
+  text-align: center;
+}
+
+.buy-div-btn button {
+  margin: 1em;
+}
 .contact-page {
   position: fixed;
   min-height: 100vh;
@@ -405,9 +442,14 @@ body {
     background: transparent;
     border-color: #9615db;
     margin-bottom: 1em;
-    padding: 0.7em;
+    padding: 0.7vh;
+    font-size: 2vh;
     font-weight: 300;
     border-style: solid;
     color: white;
+  }
+
+  .prices-row {
+    width: 100vw;
   }
 }

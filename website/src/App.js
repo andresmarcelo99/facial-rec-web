@@ -7,8 +7,9 @@ import LandingPage from "./components/pages/LandingPage";
 import RegisterPage from "./components/pages/RegisterPage";
 import ContactPage from "./components/pages/Contact";
 import ThanksPage from "./components/pages/ThanksPage";
+import PricesPage from "./components/pages/Prices";
 
-import Home from "./components/pages/Home";
+import Test from "./components/pages/Test";
 import store from "./store";
 
 function App() {
@@ -19,9 +20,10 @@ function App() {
           <Switch>
             <Route path="/" exact component={LandingPage} />
             <Route path="/register" exact component={RegisterPage} />
-            <Route path="/home" exact component={Home} />
+            <Route path="/test" exact component={Test} />
             <Route path="/contact" exact component={ContactPage} />
             <Route path="/thanks" exact component={ThanksPage} />
+            <Route path="/prices" exact component={PricesPage} />
             <Route path="/" render={() => <div>404</div>} />
           </Switch>
         </BrowserRouter>
