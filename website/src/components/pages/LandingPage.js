@@ -46,10 +46,9 @@ function LandingPage() {
               Identificando <br /> tu personal.
             </label>
             <p className="slogan-p">
-              Somos una empresa que surge con la necesidad de reinventar un
-              software eficiente para el reconocimiento facial, reduciendo
-              costos, evitando demoras en el ingreso del personal a las empresas
-              y haciendo el proceso mas efectivo y mucho más personal.
+              SID Software de reconocimiento facial para hacer eficiente el
+              registro diario (marcaje) del personal de las empresas. Ofrecemos
+              precisión y accesibilidad a tu empresa.
             </p>
 
             {
