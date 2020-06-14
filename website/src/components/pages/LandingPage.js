@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { connect, useSelector } from "react-redux";
-import { useAuth0 } from "../../react-auth0-spa";
 
 import NavBar from "../NavBar";
 import LoginModal from "../LoginModal";

@@ -4,9 +4,6 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-import config from "./auth_config.json";
-import history from "./utils/history";
-
 ReactDOM.render(
   <React.StrictMode>
     <App />,

@@ -1,13 +1,10 @@
 import React from "react";
 import { Navbar, Nav, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useAuth0 } from "../react-auth0-spa";
 
 import logo from "./logo.svg";
 
 function NavBar() {
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
-
   return (
     <Navbar
       className="navbar"
