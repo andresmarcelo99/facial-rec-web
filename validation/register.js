@@ -6,7 +6,7 @@ module.exports = function validateRegisterInput(data) {
 
   data.name = !isEmpty(data.name) ? data.name : "";
   data.email = !isEmpty(data.email) ? data.email : "";
-  data.company = !isEmpty(data.company) ? data.company : "";
+  data.phone = !isEmpty(data.phone) ? data.phone : "";
   data.password = !isEmpty(data.password) ? data.password : "";
   data.password2 = !isEmpty(data.password2) ? data.password2 : "";
 
@@ -18,8 +18,8 @@ module.exports = function validateRegisterInput(data) {
     errors.name = "Nombre es requerido";
   }
 
-  if (Validator.isEmpty(data.company)) {
-    errors.company = "Company es requerido";
+  if (Validator.isEmpty(data.phone)) {
+    errors.phone = "Telefono es requerido";
   }
 
   if (Validator.isEmpty(data.email)) {
@@ -36,12 +36,12 @@ module.exports = function validateRegisterInput(data) {
     errors.password = "Password debe ser entre 6 a 30 caracteres";
   }
 
-  if (Validator.isEmpty(data.password2)) {
-    errors.password2 = "Confirmar contraseña es requerido";
-  }
-  if (!Validator.equals(data.password, data.password2)) {
-    errors.password2 = "Las contraseñas deben ser iguales";
-  }
+  // if (Validator.isEmpty(data.password2)) {
+  //   errors.password2 = "Confirmar contraseña es requerido";
+  // }
+  // if (!Validator.equals(data.password, data.password2)) {
+  //   errors.password2 = "Las contraseñas deben ser iguales";
+  // }
 
   return {
     errors,

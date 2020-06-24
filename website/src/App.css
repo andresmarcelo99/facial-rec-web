@@ -195,7 +195,6 @@ body {
   display: block;
   text-align: center;
 }
-
 .home-btn {
   margin: 2vw;
   max-width: 10vw;
@@ -219,6 +218,7 @@ body {
   padding: 4vh 6vw;
   border: solid 2px #9615db;
   border-radius: 5px;
+  margin-bottom: 1em;
 }
 
 .leftside {

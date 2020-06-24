@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
 import { Link, Redirect } from "react-router-dom";
 import { withRouter } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 
 import ErrorAlert from "../Alerts";
 
@@ -10,9 +11,10 @@ import { addClient } from "../../actions/clientActions";
 
 export class RegisterPage extends Component {
   state = {
+    user: uuidv4(),
     name: "",
     email: "",
-    company: "",
+    phone: "",
     password: "",
     password2: "",
     alert: false,
@@ -20,9 +22,10 @@ export class RegisterPage extends Component {
 
   onSubmit = (e) => {
     const newClient = {
+      user: this.state.user,
       name: this.state.name,
       email: this.state.email,
-      company: this.state.company,
+      phone: this.state.phone,
       password: this.state.password,
       password2: this.state.password2,
     };
@@ -93,6 +96,20 @@ export class RegisterPage extends Component {
                   }}
                   type="email"
                   placeholder="Ingrese correo electronico"
+                  onChange={(e) => this.change(e)}
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label className="register-labels">Tefono</Form.Label>
+                <Form.Control
+                  name="phone"
+                  style={{
+                    background: "transparent",
+                    color: "white",
+                    borderColor: "rgba(255, 255, 255, 0.30)",
+                  }}
+                  type="text"
+                  placeholder="Ingrese telefono"
                   onChange={(e) => this.change(e)}
                 />
               </Form.Group>
