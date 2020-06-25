@@ -13,11 +13,11 @@ const validateRegisterInput = require("../../validation/register");
 const ClientModel = require("../../models/clientModel");
 
 const pool = new Pool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
+  host: "sid-db-instance.cjb79ibvsmnw.us-east-2.rds.amazonaws.com",
+  user: "postgres",
   port: 5437,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
+  password: "copancopancopan",
+  database: "postgres",
 });
 
 // @route GET api/register/test
@@ -72,49 +72,6 @@ router.post("/", (req, res) => {
           .catch((err) => res.send(err));
       });
     });
-
-  //   .catch((err) => res.json(err));
-  // pool
-  //   .query(
-  //     "INSERT INTO clientes(usuario, contraseña, nombre, estado, correo, telefono) VALUES ($1, $2, $3, $4, $5, $6)",
-  //     [user, password, name, type, email, phone]
-  //   )
-  //   .then(() =>
-  //     res.json({
-  //       message: "Client Created",
-  //       body: {
-  //         user: { user, password, name, type, email, phone },
-  //       },
-  //     })
-  //   )
-  //   .catch((err) => res.send(err));
-
-  // ClientModel.findOne({
-  //   email: req.body.email,
-  // }).then((client) => {
-  //   if (client) {
-  //     return res.status(400).json({ email: "Email already exists" });
-  //   } else {
-  //     const newClient = new ClientModel({
-  //       name: req.body.name,
-  //       company: req.body.company,
-  //       email: req.body.email,
-  //       password: req.body.password,
-  //     });
-
-  //     bcrypt.genSalt(10, (err, salt) => {
-  //       bcrypt.hash(newClient.password, salt, (err, hash) => {
-  //         if (err) {
-  //           throw err;
-  //         } else {
-  //           newClient.password = hash;
-  //           newClient
-  //             .save()
-  //             .then((client) => res.json(client))
-  //             .catch((err) => console.log(err));
-  //         }
-  //       });
-  //     });
 
   //     // create reusable transporter object using the default SMTP transport
   //     let transporter = nodemailer.createTransport({
