@@ -17,21 +17,24 @@ function MyVerticallyCenteredModal(props) {
       email,
       password,
     };
-
-    axios
-      .post("/api/login", client_log)
-      .then((res) => {
-        dispatch({
-          type: "LOGGIN",
-          payload: res.data,
-        });
-        console.log("logged");
-        console.log(res.data);
-      })
-      .catch((err) => {
-        setAlert(true);
-        console.log(err.response.data);
-      });
+    dispatch({
+      type: "LOGGIN",
+      payload: client_log,
+    });
+    // axios
+    //   .post("/api/login", client_log)
+    //   .then((res) => {
+    //     dispatch({
+    //       type: "LOGGIN",
+    //       payload: res.data,
+    //     });
+    //     console.log("logged");
+    //     console.log(res.data);
+    //   })
+    //   .catch((err) => {
+    //     setAlert(true);
+    //     console.log(err.response.data);
+    //   });
 
     console.log(client_log);
   };

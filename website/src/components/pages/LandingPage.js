@@ -26,7 +26,7 @@ function LandingPage() {
                   fontSize: "3vh",
                 }}
               >
-                Welcome, {client.logged_client.currentClient.name}
+                Welcome, Test Client
                 {/* console.log(this.props.client.logged_client.name) */}
               </div>
             )}

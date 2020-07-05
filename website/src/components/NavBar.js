@@ -1,10 +1,12 @@
 import React from "react";
 import { Navbar, Nav, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { connect, useSelector } from "react-redux";
 
 import logo from "./logo.svg";
 
 function NavBar() {
+  const client = useSelector((state) => state.client);
   return (
     <Navbar
       className="navbar"
@@ -38,6 +40,12 @@ function NavBar() {
           <Nav.Link className="nav-links" as={Link} to="contact">
             Contacto
           </Nav.Link>
+
+          {client.logged && (
+            <Nav.Link className="nav-links" as={Link} to="profile">
+              Perfil
+            </Nav.Link>
+          )}
           {/* <Nav.Link className="nav-links-auth" as={Link} to="">
             <div>
               {!isAuthenticated && (

@@ -55,7 +55,7 @@ export class RegisterPage extends Component {
             {" "}
             <Button
               style={{
-                background: "transparent",
+                background: "#9615db",
                 borderColor: "#9615db",
                 color: "white",
               }}
@@ -73,11 +73,13 @@ export class RegisterPage extends Component {
                 <Form.Label className="register-labels">Nombre</Form.Label>
                 <Form.Control
                   name="name"
-                  style={{
-                    background: "transparent",
-                    color: "white",
-                    borderColor: "rgba(255, 255, 255, 0.30)",
-                  }}
+                  style={
+                    {
+                      // background: "transparent",
+                      // color: "white",
+                      // borderColor: "rgba(255, 255, 255, 0.30)",
+                    }
+                  }
                   type="text"
                   placeholder="Ingrese nombre completo"
                   onChange={(e) => this.change(e)}
@@ -89,11 +91,13 @@ export class RegisterPage extends Component {
                 </Form.Label>
                 <Form.Control
                   name="email"
-                  style={{
-                    background: "transparent",
-                    color: "white",
-                    borderColor: "rgba(255, 255, 255, 0.30)",
-                  }}
+                  style={
+                    {
+                      // background: "transparent",
+                      // color: "white",
+                      // borderColor: "rgba(255, 255, 255, 0.30)",
+                    }
+                  }
                   type="email"
                   placeholder="Ingrese correo electronico"
                   onChange={(e) => this.change(e)}
@@ -103,11 +107,13 @@ export class RegisterPage extends Component {
                 <Form.Label className="register-labels">Tefono</Form.Label>
                 <Form.Control
                   name="phone"
-                  style={{
-                    background: "transparent",
-                    color: "white",
-                    borderColor: "rgba(255, 255, 255, 0.30)",
-                  }}
+                  style={
+                    {
+                      // background: "transparent",
+                      // color: "white",
+                      // borderColor: "rgba(255, 255, 255, 0.30)",
+                    }
+                  }
                   type="text"
                   placeholder="Ingrese telefono"
                   onChange={(e) => this.change(e)}
@@ -119,11 +125,13 @@ export class RegisterPage extends Component {
                 </Form.Label>
                 <Form.Control
                   name="company"
-                  style={{
-                    background: "transparent",
-                    color: "white",
-                    borderColor: "rgba(255, 255, 255, 0.30)",
-                  }}
+                  style={
+                    {
+                      // background: "transparent",
+                      // color: "white",
+                      // borderColor: "rgba(255, 255, 255, 0.30)",
+                    }
+                  }
                   type="text"
                   placeholder="Nombre de la empresa"
                   onChange={(e) => this.change(e)}
@@ -133,11 +141,13 @@ export class RegisterPage extends Component {
                 <Form.Label className="register-labels">Contraseña</Form.Label>
                 <Form.Control
                   name="password"
-                  style={{
-                    background: "transparent",
-                    color: "white",
-                    borderColor: "rgba(255, 255, 255, 0.30)",
-                  }}
+                  style={
+                    {
+                      // background: "transparent",
+                      // color: "white",
+                      // borderColor: "rgba(255, 255, 255, 0.30)",
+                    }
+                  }
                   type="password"
                   placeholder="Password"
                   onChange={(e) => this.change(e)}
@@ -153,11 +163,13 @@ export class RegisterPage extends Component {
                 </Form.Label>
                 <Form.Control
                   name="password2"
-                  style={{
-                    background: "transparent",
-                    color: "white",
-                    borderColor: "rgba(255, 255, 255, 0.30)",
-                  }}
+                  style={
+                    {
+                      // background: "transparent",
+                      // color: "white",
+                      // borderColor: "rgba(255, 255, 255, 0.30)",
+                    }
+                  }
                   type="password"
                   placeholder="Password"
                   onChange={(e) => this.change(e)}

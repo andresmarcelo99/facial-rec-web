@@ -8,6 +8,7 @@ import RegisterPage from "./components/pages/RegisterPage";
 import ContactPage from "./components/pages/Contact";
 import ThanksPage from "./components/pages/ThanksPage";
 import PricesPage from "./components/pages/Prices";
+import Profile from "./components/pages/Profile";
 
 import Test from "./components/pages/Test";
 import store from "./store";
@@ -24,6 +25,7 @@ function App() {
             <Route path="/contact" exact component={ContactPage} />
             <Route path="/thanks" exact component={ThanksPage} />
             <Route path="/prices" exact component={PricesPage} />
+            <Route path="/profile" exact component={Profile} />
             <Route path="/" render={() => <div>404</div>} />
           </Switch>
         </BrowserRouter>
